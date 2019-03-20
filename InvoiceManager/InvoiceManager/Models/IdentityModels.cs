@@ -1,8 +1,10 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Quick_Invoice.Models;
 
 namespace InvoiceManager.Models
 {
@@ -20,10 +22,25 @@ namespace InvoiceManager.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<PaymentType> PaymentTypes { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Seller> Sellers { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Unit> Units { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+       /* protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }  */
 
         public static ApplicationDbContext Create()
         {
