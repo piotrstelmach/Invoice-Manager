@@ -1,31 +1,27 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Welcome!";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
+<div class="container">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h2>New Invoice</h2>
+        <a href="@Url.Action("Index","NewInvoice")"><img src="https://img.icons8.com/color/96/000000/task.png"></a>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Done Invoices</h2>
+        <a href="@Url.Action("Index","DoneInvoices")"><img src="https://img.icons8.com/color/96/000000/sorting-answers.png"></a>
+</div>
+    <div class="col-md-4">
+        <h2>Products and Services</h2>
+        <a href="@Url.Action("Index","ProductsAndServices")"><img src="https://img.icons8.com/color/96/000000/job.png"></a>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+        <h2>Individual clients</h2>
+        <a href="@Url.Action("Index","IndividualClients")"><img src="https://img.icons8.com/color/96/000000/contract-job.png"></a>
+</div>
+    <div class="col-md-4">
+        <h2>Companies</h2>
+        <a href="@Url.Action("Index","Companies")"><img src="https://img.icons8.com/color/96/000000/client-company.png"></a>
+</div>
 </div>
